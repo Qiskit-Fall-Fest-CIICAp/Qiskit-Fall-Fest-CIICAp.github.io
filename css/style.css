@@ -368,6 +368,7 @@ header{
   border-top:1px solid var(--line);
 }
 
+
 /* =========================================================
    ORGANIZERS HEADER
    ========================================================= */
@@ -518,6 +519,35 @@ header{
 }
 
 
+/* =========================================================
+   AXOLOTL DIVIDER
+   ========================================================= */
+
+.axolotl-divider{
+  position:relative;
+
+  height:0;
+
+  z-index:10;
+
+  display:flex;
+
+  justify-content:center;
+}
+
+.axolotl-divider img{
+  position:absolute;
+
+  width:200px;
+  height:200px;
+
+  object-fit:contain;
+
+  transform:translateY(-130px);
+
+  pointer-events:none;
+}
+
 
 
 /* =========================================================
@@ -594,6 +624,18 @@ header{
     grid-template-columns:repeat(2,1fr);
 
     gap:45px 25px;
+  }
+
+
+  /* AXOLOTL */
+
+  .axolotl-divider img{
+    width:100px;
+    height:100px;
+
+    transform:translateY(-50px);
+
+    pointer-events:none;
   }
 
 }
@@ -688,6 +730,18 @@ header{
     padding:70px 0;
   }
 
+
+  /* AXOLOTL */
+
+  .axolotl-divider img{
+    width:85px;
+    height:85px;
+
+    transform:translateY(-42px);
+
+    pointer-events:none;
+  }
+
 }
 
 
@@ -728,6 +782,18 @@ header{
 
   .event-description{
     font-size:.9rem;
+  }
+
+
+  /* AXOLOTL */
+
+  .axolotl-divider img{
+    width:75px;
+    height:75px;
+
+    transform:translateY(-37px);
+
+    pointer-events:none;
   }
 
 }
