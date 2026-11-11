@@ -1,193 +1,97 @@
 /* =========================================================
-   QISKIT FALL FEST 2026
-   QubitHub / CIICAp Visual Style
+   VARIABLES
    ========================================================= */
 
-:root{
-  --bg:#FFFFFF;
+:root {
+  --bg: #FFFFFF;
+  --surface: #F5F8F0;
+  --surface-2: #EAF2DD;
+  --line: rgba(122, 183, 48, 0.18);
 
-  --surface:#F5F8F0;
-  --surface-2:#EAF2DD;
+  --text: #24301C;
+  --text-dim: #66705D;
 
-  --line:rgba(122,183,48,0.18);
-
-  --text:#24301C;
-  --text-dim:#66705D;
-
-  --accent:#7AB730;
-  --accent-light:#8BCB3F;
-
-  --green-dark:#527D20;
-  --green-soft:#EAF2DD;
+  --accent: #7AB730;
+  --accent-light: #8BCB3F;
+  --green-dark: #527D20;
+  --green-soft: #EAF2DD;
 }
 
 
 /* =========================================================
-   RESET
+   BASE
    ========================================================= */
 
-*{
-  box-sizing:border-box;
+* {
+  box-sizing: border-box;
 }
 
-html{
-  scroll-behavior:smooth;
+html {
+  scroll-behavior: smooth;
 }
 
-body{
-  margin:0;
-  min-height:100vh;
-
-  background:var(--bg);
-  color:var(--text);
-
-  font-family:'Work Sans',sans-serif;
-  font-size:16px;
-  line-height:1.6;
-
-  -webkit-font-smoothing:antialiased;
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Work Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
 }
 
-img{
-  max-width:100%;
-  display:block;
+img {
+  max-width: 100%;
+  display: block;
 }
 
-a{
-  color:inherit;
+a {
+  color: inherit;
 }
 
 h1,
 h2,
 h3,
-h4{
-  font-family:'Fraunces',serif;
-  font-weight:500;
-
-  margin:0;
-
-  letter-spacing:-0.01em;
+h4 {
+  margin: 0;
+  font-family: 'Fraunces', serif;
+  font-weight: 500;
+  letter-spacing: -0.01em;
 }
 
-:focus-visible{
-  outline:2px solid var(--accent);
-  outline-offset:3px;
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
 }
 
-
-/* =========================================================
-   ACCESSIBILITY
-   ========================================================= */
-
-@media (prefers-reduced-motion:reduce){
-
-  *{
-    animation-duration:0.001ms !important;
-    animation-iteration-count:1 !important;
-    transition-duration:0.001ms !important;
-    scroll-behavior:auto !important;
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
   }
-
 }
 
 
 /* =========================================================
-   GENERAL CONTAINER
+   LAYOUT
    ========================================================= */
 
-.wrap{
-  max-width:1100px;
-  margin:0 auto;
-
-  padding:0 28px;
+.wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 28px;
 }
 
-
-/* =========================================================
-   HEADER
-   ========================================================= */
-
-header{
-  position:sticky;
-  top:0;
-
-  z-index:50;
-
-  background:var(--surface);
-
-  backdrop-filter:blur(14px);
-  -webkit-backdrop-filter:blur(14px);
-
-  border-bottom:1px solid var(--line);
-}
-
-.nav{
-  display:flex;
-
-  align-items:center;
-  justify-content:space-between;
-
-  gap:30px;
-
-  max-width:1100px;
-
-  margin:0 auto;
-
-  padding:18px 28px;
-}
-
-
-/* =========================================================
-   HEADER LOGOS
-   ========================================================= */
-
-.event-logos{
-  display:flex;
-
-  align-items:center;
-
-  gap:18px;
-
-  min-width:190px;
-}
-
-.event-logos img{
-  width:auto;
-
-  object-fit:contain;
-}
-
-.logo-ciicap{
-  height:68px;
-}
-
-.logo-qubithub{
-  height:36px;
-}
-
-
-/* =========================================================
-   HEADER EVENT NAME
-   ========================================================= */
-
-.brand{
-  font-family:'Fraunces',serif;
-
-  font-size:2rem;
-
-  line-height:1;
-
-  text-align:center;
-
-  white-space:nowrap;
-
-  color:var(--green-dark);
-
-  font-weight:500;
-}
-
-.brand span{
-  color:var(--accent);
+.section-label {
+  margin-bottom: 8px;
+  color: var(--accent);
+  font-size: .85rem;
+  font-weight: 600;
+  letter-spacing: .35em;
+  text-transform: uppercase;
 }
 
 
@@ -195,20 +99,14 @@ header{
    BUTTONS
    ========================================================= */
 
-.btn{
-  display:inline-block;
-
-  padding:13px 26px;
-
-  border-radius:3px;
-
-  font-size:.95rem;
-  font-weight:500;
-
-  text-decoration:none;
-
-  cursor:pointer;
-
+.btn {
+  display: inline-block;
+  padding: 13px 26px;
+  border-radius: 3px;
+  font-size: .95rem;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
   transition:
     transform .15s ease,
     background .15s ease,
@@ -217,305 +115,228 @@ header{
     box-shadow .15s ease;
 }
 
-.btn-primary{
-  background:var(--accent);
-
-  color:#FFFFFF;
-
-  border:1px solid var(--accent);
-
-  font-weight:600;
+.btn-primary {
+  background: var(--accent);
+  border: 1px solid var(--accent);
+  color: #FFFFFF;
+  font-weight: 600;
 }
 
-.btn-primary:hover{
-  background:var(--accent-light);
-
-  border-color:var(--accent-light);
-
-  transform:translateY(-2px);
-
-  box-shadow:
-    0 6px 18px rgba(122,183,48,0.20);
+.btn-primary:hover {
+  background: var(--accent-light);
+  border-color: var(--accent-light);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(122, 183, 48, 0.20);
 }
 
-.btn-nav{
-  padding:9px 20px;
-
-  font-size:.88rem;
+.btn-nav {
+  padding: 9px 20px;
+  font-size: .88rem;
 }
 
 
 /* =========================================================
-   EVENT MAIN SECTION
+   HEADER
    ========================================================= */
 
-.event-main{
-  padding:100px 0 110px;
-
-  display:grid;
-
-  grid-template-columns:1.1fr .9fr;
-
-  gap:50px;
-
-  align-items:center;
+header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--surface);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--line);
 }
 
-.event-content{
-  display:flex;
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 18px 28px;
+}
 
-  flex-direction:column;
+.event-logos {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  min-width: 190px;
+}
 
-  align-items:flex-start;
+.event-logos img {
+  width: auto;
+  object-fit: contain;
+}
+
+.logo-ciicap {
+  height: 68px;
+}
+
+.logo-qubithub {
+  height: 36px;
+}
+
+.brand {
+  font-family: 'Fraunces', serif;
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  color: var(--green-dark);
+}
+
+.brand span {
+  color: var(--accent);
 }
 
 
 /* =========================================================
-   EVENT TITLE
+   EVENT MAIN
    ========================================================= */
 
-.event-title{
-  font-family:'Fraunces',serif;
-
-  font-size:clamp(3.8rem,7vw,6.5rem);
-
-  line-height:.98;
-
-  letter-spacing:-0.045em;
-
-  margin:0 0 30px;
-
-  color:var(--green-dark);
+.event-main {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 50px;
+  align-items: center;
+  padding: 50px 0 110px;
 }
 
-.event-title em{
-  font-style:normal;
+.event-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
 
-  color:var(--accent);
+.event-title {
+  margin: 0 0 30px;
+  font-size: clamp(3.8rem, 7vw, 6.5rem);
+  line-height: .98;
+  letter-spacing: -0.045em;
+  color: var(--green-dark);
+}
+
+.event-title em {
+  font-style: normal;
+  color: var(--accent);
+}
+
+.event-description {
+  max-width: 650px;
+  margin: 0 0 34px;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text-dim);
+}
+
+.event-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.qiskit-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 1 / 1;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.qiskit-logo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 
 /* =========================================================
-   EVENT DESCRIPTION
+   JOIN (REGISTER + TALKS)
    ========================================================= */
 
-.event-description{
-  max-width:650px;
-
-  margin:0 0 34px;
-
-  color:var(--text-dim);
-
-  font-size:1rem;
-
-  line-height:1.7;
+.join-section {
+  padding: 10px 0;
+  padding-bottom: 100px;
+  background: #FFFFFF;
+  border-top: 1px solid var(--line);
 }
 
-
-/* =========================================================
-   EVENT BUTTON AREA
-   ========================================================= */
-
-.event-actions{
-  display:flex;
-
-  gap:16px;
-
-  flex-wrap:wrap;
+.join-grid {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  gap: 50px;
+  align-items: center;
 }
 
-
-/* =========================================================
-   QISKIT FALL FEST LOGO
-   ========================================================= */
-
-.qiskit-logo{
-  width:100%;
-
-  max-width:420px;
-
-  aspect-ratio:1 / 1;
-
-  margin:0 auto;
-
-  display:flex;
-
-  align-items:center;
-  justify-content:center;
-
-  overflow:hidden;
+.register-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  text-align: center;
 }
 
-.qiskit-logo img{
-  width:100%;
-  height:100%;
-
-  object-fit:contain;
-
-  display:block;
+.register-content h2,
+.talks-content h2 {
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  line-height: 1.1;
+  color: var(#0000);
 }
 
-
-/* =========================================================
-   ORGANIZERS
-   ========================================================= */
-
-.organizers-section{
-  padding:90px 0 110px;
-
-  background:var(--surface);
-
-  border-top:1px solid var(--line);
+.talks-content {
+  min-width: 0;
+  text-align: center;
 }
 
-
-/* =========================================================
-   ORGANIZERS HEADER
-   ========================================================= */
-
-.organizers-head{
-  display:flex;
-
-  justify-content:center;
-  align-items:center;
-
-  text-align:center;
-
-  margin-bottom:60px;
+.talks-carousel {
+  position: relative;
+  overflow: hidden;
+  margin: 30px 0 0;
 }
 
-.organizers-head > div{
-  width:100%;
+.talks-track {
+  display: flex;
+  transition: transform 0.5s ease;
 }
 
-.section-label{
-  margin-bottom:8px;
-
-  color:var(--accent);
-
-  font-family:'Work Sans',sans-serif;
-
-  font-size:.85rem;
-
-  font-weight:600;
-
-  letter-spacing:.35em;
-
-  text-transform:uppercase;
+.talks-slide {
+  min-width: 100%;
 }
 
-.organizers-head h2{
-  margin:0;
-
-  color:#18251B;
-
-  font-family:'Fraunces',serif;
-
-  font-size:clamp(2.4rem,5vw,3.8rem);
-
-  font-weight:600;
-
-  line-height:1.05;
-
-  letter-spacing:-0.025em;
+.talks-slide img {
+  display: block;
+  width: 100%;
 }
 
-.organizers-grid{
-  display:grid;
-
-  grid-template-columns:repeat(3,1fr);
-
-  gap:55px 30px;
+.talks-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 45px;
+  height: 45px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
 }
 
-
-/* =========================================================
-   ORGANIZER
-   ========================================================= */
-
-.person{
-  text-align:center;
-
-  transition:transform .2s ease;
+.talks-prev {
+  left: 10px;
 }
 
-.person:hover{
-  transform:translateY(-5px);
-}
-
-.person .avatar{
-  display:flex;
-
-  align-items:center;
-  justify-content:center;
-
-  width:150px;
-  height:150px;
-
-  margin:0 auto 20px;
-
-  padding:0;
-
-  border-radius:50%;
-
-  overflow:hidden;
-
-  background:#FFFFFF;
-
-  border:2px solid var(--line);
-
-  text-decoration:none;
-
-  transition:
-    border-color .2s ease,
-    box-shadow .2s ease,
-    transform .2s ease;
-}
-
-.person .avatar img{
-  width:100%;
-  height:100%;
-
-  object-fit:cover;
-
-  transition:transform .25s ease;
-}
-
-.person:hover .avatar{
-  border-color:var(--accent);
-
-  box-shadow:
-    0 0 0 4px rgba(122,183,48,0.10);
-}
-
-.person:hover .avatar img{
-  transform:scale(1.05);
-}
-
-.person h4{
-  font-family:'Fraunces',serif;
-
-  font-size:1.1rem;
-
-  font-weight:500;
-
-  line-height:1.3;
-
-  margin:0 0 7px;
-
-  color:var(--green-dark);
-}
-
-.person .role{
-  color:var(--text-dim);
-
-  font-size:.85rem;
-
-  line-height:1.45;
-
-  max-width:32ch;
-
-  margin:0 auto;
+.talks-next {
+  right: 10px;
 }
 
 
@@ -523,277 +344,305 @@ header{
    AXOLOTL DIVIDER
    ========================================================= */
 
-.axolotl-divider{
-  position:relative;
-
-  height:0;
-
-  z-index:10;
-
-  display:flex;
-
-  justify-content:center;
+.axolotl-divider {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  height: 0;
 }
 
-.axolotl-divider img{
-  position:absolute;
-
-  width:200px;
-  height:200px;
-
-  object-fit:contain;
-
-  transform:translateY(-130px);
-
-  pointer-events:none;
-}
-
-
-
-/* =========================================================
-   REGISTER SECTION
-   ========================================================= */
-
-.register-section{
-  padding:90px 0;
-
-  background:#FFFFFF;
-
-  border-top:1px solid var(--line);
-}
-
-.register-content{
-  display:flex;
-
-  align-items:center;
-  justify-content:center;
-
-  flex-direction:column;
-
-  gap:30px;
-
-  text-align:center;
-}
-
-.register-content h2{
-  font-size:clamp(1.8rem,3vw,2.5rem);
-
-  line-height:1.1;
-
-  color:var(--green-dark);
+.axolotl-divider img {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  transform: translateY(-130px);
+  pointer-events: none;
 }
 
 
 /* =========================================================
-   TABLET
+   ORGANIZERS
    ========================================================= */
 
-@media (max-width:860px){
+.organizers-section {
+  padding: 20px 0 70px;
+  background: var(--surface);
+  border-top: 1px solid var(--line);
+}
 
-  .nav{
-    padding:16px 22px;
-  }
+.organizers-head {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 60px;
+  text-align: center;
+}
 
-  .brand{
-    display:block;
+.organizers-head > div {
+  width: 100%;
+}
 
-    font-size:1.35rem;
-  }
+.organizers-head h2 {
+  font-size: clamp(2.4rem, 5vw, 3.8rem);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  color: #18251B;
+}
 
-  .event-main{
-    grid-template-columns:1fr;
+.organizers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 55px 30px;
+}
 
-    padding-top:70px;
-  }
+.person {
+  text-align: center;
+  transition: transform .2s ease;
+}
 
-  .event-content{
-    align-items:center;
+.person:hover {
+  transform: translateY(-5px);
+}
 
-    text-align:center;
-  }
+.person .avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 20px;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 2px solid var(--line);
+  background: #FFFFFF;
+  text-decoration: none;
+  transition:
+    border-color .2s ease,
+    box-shadow .2s ease,
+    transform .2s ease;
+}
 
-  .event-title{
-    font-size:clamp(3.2rem,10vw,5rem);
-  }
+.person .avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .25s ease;
+}
 
-  .event-description{
-    max-width:620px;
-  }
+.person:hover .avatar {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(122, 183, 48, 0.10);
+}
 
-  .organizers-grid{
-    grid-template-columns:repeat(2,1fr);
+.person:hover .avatar img {
+  transform: scale(1.05);
+}
 
-    gap:45px 25px;
-  }
+.person h4 {
+  margin: 0 0 7px;
+  font-size: 1.1rem;
+  line-height: 1.3;
+  color: var(--green-dark);
+}
 
-
-  /* AXOLOTL */
-
-  .axolotl-divider img{
-    width:100px;
-    height:100px;
-
-    transform:translateY(-50px);
-
-    pointer-events:none;
-  }
-
+.person .role {
+  max-width: 32ch;
+  margin: 0 auto;
+  font-size: .85rem;
+  line-height: 1.45;
+  color: var(--text-dim);
 }
 
 
 /* =========================================================
-   MOBILE
+   TABLET (max 860px)
    ========================================================= */
 
-@media (max-width:600px){
+@media (max-width: 860px) {
 
-  header{
-    position:relative;
+  .nav {
+    padding: 16px 22px;
   }
 
-  .nav{
-    padding:18px 20px;
-
-    gap:15px;
+  .brand {
+    font-size: 1.35rem;
   }
 
-  .event-logos{
-    gap:14px;
-
-    min-width:auto;
+  .event-main {
+    grid-template-columns: 1fr;
+    padding-top: 70px;
   }
 
-  .logo-ciicap{
-    height:43px;
+  .event-content {
+    align-items: center;
+    text-align: center;
   }
 
-  .logo-qubithub{
-    height:29px;
+  .event-title {
+    font-size: clamp(3.2rem, 10vw, 5rem);
   }
 
-  .brand{
-    font-size:1.05rem;
+  .event-description {
+    max-width: 620px;
   }
 
-  .event-main{
-    padding:75px 0 80px;
+  .axolotl-divider img {
+    width: 100px;
+    height: 100px;
+    transform: translateY(-50px);
   }
 
-  .event-title{
-    font-size:clamp(2.8rem,13vw,4.5rem);
-
-    line-height:1;
-  }
-
-  .event-description{
-    font-size:.95rem;
-
-    line-height:1.65;
-  }
-
-  .qiskit-logo{
-    max-width:320px;
-  }
-
-  .organizers-section{
-    padding:70px 0 85px;
-  }
-
-  .organizers-head{
-    margin-bottom:45px;
-  }
-
-  .organizers-head h2{
-    font-size:2rem;
-  }
-
-  .organizers-grid{
-    grid-template-columns:1fr;
-
-    gap:40px;
-  }
-
-  .person{
-    max-width:350px;
-
-    width:100%;
-
-    margin:0 auto;
-  }
-
-  .person .avatar{
-    width:140px;
-    height:140px;
-  }
-
-  .register-section{
-    padding:70px 0;
-  }
-
-
-  /* AXOLOTL */
-
-  .axolotl-divider img{
-    width:85px;
-    height:85px;
-
-    transform:translateY(-42px);
-
-    pointer-events:none;
+  .organizers-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 45px 25px;
   }
 
 }
 
 
 /* =========================================================
-   SMALL MOBILE
+   MOBILE (max 600px)
    ========================================================= */
 
-@media (max-width:400px){
+@media (max-width: 600px) {
 
-  .nav{
-    padding:15px 14px;
+  header {
+    position: relative;
   }
 
-  .event-logos{
-    gap:10px;
+  .nav {
+    gap: 15px;
+    padding: 18px 20px;
   }
 
-  .logo-ciicap{
-    height:38px;
+  .event-logos {
+    gap: 14px;
+    min-width: auto;
   }
 
-  .logo-qubithub{
-    height:25px;
+  .logo-ciicap {
+    height: 43px;
   }
 
-  .brand{
-    font-size:.95rem;
+  .logo-qubithub {
+    height: 29px;
   }
 
-  .event-main{
-    padding-left:0;
-    padding-right:0;
+  .brand {
+    font-size: 1.05rem;
   }
 
-  .event-title{
-    font-size:2.5rem;
+  .event-main {
+    padding: 75px 0 80px;
   }
 
-  .event-description{
-    font-size:.9rem;
+  .event-title {
+    font-size: clamp(2.8rem, 13vw, 4.5rem);
+    line-height: 1;
   }
 
+  .event-description {
+    font-size: .95rem;
+    line-height: 1.65;
+  }
 
-  /* AXOLOTL */
+  .qiskit-logo {
+    max-width: 320px;
+  }
 
-  .axolotl-divider img{
-    width:75px;
-    height:75px;
+  .join-section {
+    padding: 50px 0;
+  }
 
-    transform:translateY(-37px);
+  .join-grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
 
-    pointer-events:none;
+  .axolotl-divider img {
+    width: 85px;
+    height: 85px;
+    transform: translateY(-42px);
+  }
+
+  .organizers-section {
+    padding: 70px 0 85px;
+  }
+
+  .organizers-head {
+    margin-bottom: 45px;
+  }
+
+  .organizers-head h2 {
+    font-size: 2rem;
+  }
+
+  .organizers-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .person {
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+  }
+
+  .person .avatar {
+    width: 140px;
+    height: 140px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE (max 400px)
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+  .nav {
+    padding: 15px 14px;
+  }
+
+  .event-logos {
+    gap: 10px;
+  }
+
+  .logo-ciicap {
+    height: 38px;
+  }
+
+  .logo-qubithub {
+    height: 25px;
+  }
+
+  .brand {
+    font-size: .95rem;
+  }
+
+  .event-main {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .event-title {
+    font-size: 2.5rem;
+  }
+
+  .event-description {
+    font-size: .9rem;
+  }
+
+  .axolotl-divider img {
+    width: 75px;
+    height: 75px;
+    transform: translateY(-37px);
   }
 
 }
