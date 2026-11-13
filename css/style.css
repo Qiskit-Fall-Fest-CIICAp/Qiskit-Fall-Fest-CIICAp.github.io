@@ -1,34 +1,27 @@
-/* =========================================================
-   VARIABLES
-   ========================================================= */
+/* =========================================================*
+  *   VARIABLES*
+  *   ========================================================= */
 
 :root {
   --bg: #FFFFFF;
   --surface: #F5F8F0;
   --surface-2: #EAF2DD;
   --line: rgba(122, 183, 48, 0.18);
-
   --text: #24301C;
   --text-dim: #66705D;
-
   --accent: #7AB730;
   --accent-light: #8BCB3F;
   --green-dark: #527D20;
   --green-soft: #EAF2DD;
 }
 
+/* =========================================================*
+  *   BASE*
+  *   ========================================================= */
 
-/* =========================================================
-   BASE
-   ========================================================= */
+* { box-sizing: border-box; }
 
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
@@ -41,29 +34,20 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-img {
-  max-width: 100%;
-  display: block;
-}
+img { max-width: 100%; display: block; }
 
-a {
-  color: inherit;
-}
+a { color: inherit; }
 
-h1,
-h2,
-h3,
-h4 {
+h1, h2, h3, h4 {
   margin: 0;
   font-family: 'Fraunces', serif;
   font-weight: 500;
   letter-spacing: -0.01em;
 }
 
-:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 3px;
-}
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+#sponsors, #registro, #talks, #equipo { scroll-margin-top: 100px; }
 
 @media (prefers-reduced-motion: reduce) {
   * {
@@ -74,16 +58,11 @@ h4 {
   }
 }
 
+/* =========================================================*
+  *   LAYOUT*
+  *   ========================================================= */
 
-/* =========================================================
-   LAYOUT
-   ========================================================= */
-
-.wrap {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 28px;
-}
+.wrap { max-width: 1100px; margin: 0 auto; padding: 0 28px; }
 
 .section-label {
   margin-bottom: 8px;
@@ -94,10 +73,9 @@ h4 {
   text-transform: uppercase;
 }
 
-
-/* =========================================================
-   BUTTONS
-   ========================================================= */
+/* =========================================================*
+  *   BUTTONS*
+  *   ========================================================= */
 
 .btn {
   display: inline-block;
@@ -107,12 +85,7 @@ h4 {
   font-weight: 500;
   text-decoration: none;
   cursor: pointer;
-  transition:
-    transform .15s ease,
-    background .15s ease,
-    border-color .15s ease,
-    color .15s ease,
-    box-shadow .15s ease;
+  transition: transform .15s ease, background .15s ease, border-color .15s ease, color .15s ease, box-shadow .15s ease;
 }
 
 .btn-primary {
@@ -129,15 +102,11 @@ h4 {
   box-shadow: 0 6px 18px rgba(122, 183, 48, 0.20);
 }
 
-.btn-nav {
-  padding: 9px 20px;
-  font-size: .88rem;
-}
+.btn-nav { padding: 9px 20px; font-size: .88rem; }
 
-
-/* =========================================================
-   HEADER
-   ========================================================= */
+/* =========================================================*
+  *   HEADER*
+  *   ========================================================= */
 
 header {
   position: sticky;
@@ -166,18 +135,11 @@ header {
   min-width: 190px;
 }
 
-.event-logos img {
-  width: auto;
-  object-fit: contain;
-}
+.event-logos img { width: auto; object-fit: contain; }
 
-.logo-ciicap {
-  height: 68px;
-}
+.logo-ciicap { height: 68px; }
 
-.logo-qubithub {
-  height: 36px;
-}
+.logo-qubithub { height: 36px; }
 
 .brand {
   font-family: 'Fraunces', serif;
@@ -189,14 +151,11 @@ header {
   color: var(--green-dark);
 }
 
-.brand span {
-  color: var(--accent);
-}
+.brand span { color: var(--accent); }
 
-
-/* =========================================================
-   EVENT MAIN
-   ========================================================= */
+/* =========================================================*
+  *   EVENT MAIN*
+  *   ========================================================= */
 
 .event-main {
   display: grid;
@@ -220,10 +179,7 @@ header {
   color: var(--green-dark);
 }
 
-.event-title em {
-  font-style: normal;
-  color: var(--accent);
-}
+.event-title em { font-style: normal; color: var(--accent); }
 
 .event-description {
   max-width: 650px;
@@ -233,11 +189,7 @@ header {
   color: var(--text-dim);
 }
 
-.event-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-}
+.event-actions { display: flex; flex-wrap: wrap; gap: 16px; }
 
 .qiskit-logo {
   display: flex;
@@ -257,10 +209,9 @@ header {
   object-fit: contain;
 }
 
-
-/* =========================================================
-   JOIN (REGISTER + TALKS)
-   ========================================================= */
+/* =========================================================*
+  *   JOIN (REGISTER + TALKS)*
+  *   ========================================================= */
 
 .join-section {
   padding: 10px 0;
@@ -285,38 +236,21 @@ header {
   text-align: center;
 }
 
-.register-content h2,
-.talks-content h2 {
+.register-content h2, .talks-content h2 {
   font-size: clamp(1.8rem, 3vw, 2.5rem);
   line-height: 1.1;
-  color: var(#0000);
+  color: var(--text);
 }
 
-.talks-content {
-  min-width: 0;
-  text-align: center;
-  padding: 0px 0px 30px;
-}
+.talks-content { min-width: 0; padding: 0 0 30px; text-align: center; }
 
-.talks-carousel {
-  position: relative;
-  overflow: hidden;
-  margin: 30px 0 0;
-}
+.talks-carousel { position: relative; overflow: hidden; margin: 30px 0 0; }
 
-.talks-track {
-  display: flex;
-  transition: transform 0.5s ease;
-}
+.talks-track { display: flex; transition: transform 0.5s ease; }
 
-.talks-slide {
-  min-width: 100%;
-}
+.talks-slide { min-width: 100%; }
 
-.talks-slide img {
-  display: block;
-  width: 100%;
-}
+.talks-slide img { display: block; width: 100%; }
 
 .talks-btn {
   position: absolute;
@@ -332,20 +266,16 @@ header {
   cursor: pointer;
 }
 
-.talks-prev {
-  left: 10px;
-}
+.talks-prev { left: 10px; }
 
-.talks-next {
-  right: 10px;
-}
+.talks-next { right: 10px; }
 
-/* =========================================================
-   SCHEDULE SECTION
-   ========================================================= */
+/* =========================================================*
+  *   SCHEDULE SECTION*
+  *   ========================================================= */
 
 .schedule-section {
-  padding: 0px 0 100px;
+  padding: 0 0 100px;
   background: #FFFFFF;
   border-top: 1px solid var(--line);
   text-align: center;
@@ -365,34 +295,13 @@ header {
   border-radius: 6px;
 }
 
-.schedule-pdf {
-  display: block;
-  width: 100%;
-  height: 700px;
-}
+.schedule-pdf { display: block; width: 100%; height: 700px; }
 
-@media (max-width: 600px) {
-  .schedule-section {
-    padding: 50px 0;
-  }
+/* =========================================================*
+  *   AXOLOTL DIVIDER*
+  *   ========================================================= */
 
-  .schedule-pdf {
-    height: 500px;
-  }
-}
-
-
-/* =========================================================
-   AXOLOTL DIVIDER
-   ========================================================= */
-
-.axolotl-divider {
-  position: relative;
-  z-index: 10;
-  display: flex;
-  justify-content: center;
-  height: 0;
-}
+.axolotl-divider { position: relative; z-index: 10; display: flex; justify-content: center; height: 0; }
 
 .axolotl-divider img {
   position: absolute;
@@ -403,10 +312,9 @@ header {
   pointer-events: none;
 }
 
-
-/* =========================================================
-   ORGANIZERS
-   ========================================================= */
+/* =========================================================*
+  *   ORGANIZERS*
+  *   ========================================================= */
 
 .organizers-section {
   padding: 20px 0 70px;
@@ -422,9 +330,7 @@ header {
   text-align: center;
 }
 
-.organizers-head > div {
-  width: 100%;
-}
+.organizers-head > div { width: 100%; }
 
 .organizers-head h2 {
   font-size: clamp(2.4rem, 5vw, 3.8rem);
@@ -440,14 +346,9 @@ header {
   gap: 55px 30px;
 }
 
-.person {
-  text-align: center;
-  transition: transform .2s ease;
-}
+.person { text-align: center; transition: transform .2s ease; }
 
-.person:hover {
-  transform: translateY(-5px);
-}
+.person:hover { transform: translateY(-5px); }
 
 .person .avatar {
   display: flex;
@@ -462,10 +363,7 @@ header {
   border: 2px solid var(--line);
   background: #FFFFFF;
   text-decoration: none;
-  transition:
-    border-color .2s ease,
-    box-shadow .2s ease,
-    transform .2s ease;
+  transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease;
 }
 
 .person .avatar img {
@@ -480,9 +378,7 @@ header {
   box-shadow: 0 0 0 4px rgba(122, 183, 48, 0.10);
 }
 
-.person:hover .avatar img {
-  transform: scale(1.05);
-}
+.person:hover .avatar img { transform: scale(1.05); }
 
 .person h4 {
   margin: 0 0 7px;
@@ -499,80 +395,55 @@ header {
   color: var(--text-dim);
 }
 
+/* =========================================================*
+  *   SPONSORS CAROUSEL*
+  *   ========================================================= */
 
+.sponsors-section { padding: 20px 0; background: var(--surface); border-top: 1px solid var(--line); }
 
-/* =========================================================
-   SPONSORS CAROUSEL
-   ========================================================= */
+.sponsors-section .wrap { max-width: 1700px; }
 
-.sponsor-scale {
-    transform: scale(1.3);
-}
+.sponsors-carousel { width: 100%; margin-bottom: 15px; overflow: hidden; }
 
-.sponsors-carousel {
-  width: 100%;
-  overflow: hidden;
-  margin-bottom: 15px;
-}
+.sponsors-viewport { width: 100%; overflow: hidden; }
 
-.sponsors-viewport {
-  width: 100%;
-  overflow: hidden;
-}
-
-.sponsors-track {
-  display: flex;
-  width: 100%;
-  transition: transform 0.6s ease-in-out;
-}
+.sponsors-track { display: flex; width: 100%; transition: transform 0.6s ease-in-out; }
 
 .sponsors-slide {
   flex: 0 0 33.333333%;
   min-width: 0;
-
   display: flex;
   justify-content: center;
   align-items: center;
-
-  height: 180px;
-  padding: 15px;
-
+  height: 200px;
+  padding: 10px;
   box-sizing: border-box;
 }
 
 .sponsor {
   width: 100%;
   height: 100%;
-
   display: flex;
   justify-content: center;
   align-items: center;
-
   cursor: pointer;
 }
 
 .sponsor img {
-  max-width: 95%;
-  max-height: 125px;
-
-  width: auto;
-  height: auto;
-
+  width: 100%;
+  height: 100%;
   object-fit: contain;
-
+  object-position: center;
   transition: transform 0.3s ease;
 }
 
-.sponsor:hover img {
-  transform: scale(1.08);
-}
-
-/* Pagination */
+.sponsor:hover img { transform: scale(1.05); }
 
 .sponsors-dots {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   gap: 10px;
   margin-bottom: 20px;
 }
@@ -581,225 +452,117 @@ header {
   width: 10px;
   height: 10px;
   padding: 0;
-
   border: none;
   border-radius: 50%;
-
   background: #D5D5D5;
   cursor: pointer;
-
   transition: all 0.3s ease;
 }
 
-.sponsors-dot.active {
-  width: 25px;
-  border-radius: 10px;
-  background: #7AB730;
-}
+.sponsors-dot.active { width: 25px; border-radius: 10px; background: #7AB730; }
 
-/* Mobile */
-
-@media (max-width: 600px) {
-
-  .sponsors-slide {
-    height: 140px;
-    padding: 8px;
-  }
-
-  .sponsor img {
-    max-height: 95px;
-  }
-
-}
-
-
-
-
-/* =========================================================
-   TABLET (max 860px)
-   ========================================================= */
+/* =========================================================*
+  *   TABLET (max 860px)*
+  *   ========================================================= */
 
 @media (max-width: 860px) {
-
-  .nav {
-    padding: 16px 22px;
-  }
-
-  .brand {
-    font-size: 1.35rem;
-  }
-
-  .event-main {
-    grid-template-columns: 1fr;
-    padding-top: 70px;
-  }
-
-  .event-content {
-    align-items: center;
-    text-align: center;
-  }
-
-  .event-title {
-    font-size: clamp(3.2rem, 10vw, 5rem);
-  }
-
-  .event-description {
-    max-width: 620px;
-  }
-
-  .axolotl-divider img {
-    width: 100px;
-    height: 100px;
-    transform: translateY(-50px);
-  }
-
-  .organizers-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 45px 25px;
-  }
-
+  #sponsors, #registro, #talks, #equipo { scroll-margin-top: 80px; }
+  .nav { padding: 16px 22px; }
+  .brand { font-size: 1.35rem; }
+  .event-main { grid-template-columns: 1fr; padding-top: 70px; }
+  .event-content { align-items: center; text-align: center; }
+  .event-title { font-size: clamp(3.2rem, 10vw, 5rem); }
+  .event-description { max-width: 620px; }
+  .axolotl-divider img { width: 120px; height: 120px; transform: translateY(-75px); }
+  .organizers-grid { grid-template-columns: repeat(2, 1fr); gap: 45px 25px; }
+  .sponsors-slide { flex: 0 0 50%; height: 200px; padding: 18px 28px; }
+  .sponsors-dots { gap: 8px; margin-bottom: 16px; }
+  .sponsors-dot { width: 9px; height: 9px; }
+  .sponsors-dot.active { width: 22px; }
 }
 
-
-/* =========================================================
-   MOBILE (max 600px)
-   ========================================================= */
+/* =========================================================*
+  *   MOBILE (max 600px)*
+  *   ========================================================= */
 
 @media (max-width: 600px) {
-
-  header {
-    position: relative;
-  }
-
-  .nav {
-    gap: 15px;
-    padding: 18px 20px;
-  }
-
-  .event-logos {
-    gap: 14px;
-    min-width: auto;
-  }
-
-  .logo-ciicap {
-    height: 43px;
-  }
-
-  .logo-qubithub {
-    height: 29px;
-  }
-
-  .brand {
-    font-size: 1.05rem;
-  }
-
-  .event-main {
-    padding: 75px 0 80px;
-  }
-
-  .event-title {
-    font-size: clamp(2.8rem, 13vw, 4.5rem);
-    line-height: 1;
-  }
-
-  .event-description {
-    font-size: .95rem;
-    line-height: 1.65;
-  }
-
-  .qiskit-logo {
-    max-width: 320px;
-  }
-
-  .join-section {
-    padding: 50px 0;
-  }
-
-  .join-grid {
-    grid-template-columns: 1fr;
-    gap: 50px;
-  }
-
-  .axolotl-divider img {
-    width: 85px;
-    height: 85px;
-    transform: translateY(-90px);
-  }
-
-  .organizers-section {
-    padding: 70px 0 85px;
-  }
-
-  .organizers-head {
-    margin-bottom: 45px;
-  }
-
-  .organizers-head h2 {
-    font-size: 2rem;
-  }
-
-  .organizers-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
-  .person {
-    width: 100%;
-    max-width: 350px;
-    margin: 0 auto;
-  }
-
-  .person .avatar {
-    width: 140px;
-    height: 140px;
-  }
-
+  #sponsors, #registro, #talks, #equipo { scroll-margin-top: 0; }
+  header { position: relative; }
+  .nav { gap: 15px; padding: 18px 20px; }
+  .event-logos { gap: 14px; min-width: auto; }
+  .logo-ciicap { height: 43px; }
+  .logo-qubithub { height: 29px; }
+  .brand { font-size: 1.05rem; }
+  .event-main { padding: 75px 0 80px; }
+  .event-title { font-size: clamp(2.8rem, 13vw, 4.5rem); line-height: 1; }
+  .event-description { font-size: .95rem; line-height: 1.65; }
+  .qiskit-logo { max-width: 320px; }
+  .join-section { padding: 50px 0; }
+  .join-grid { grid-template-columns: 1fr; gap: 50px; }
+  .talks-content { padding: 0 0 20px; }
+  .talks-carousel { margin: 20px 0 0; }
+  .talks-btn { width: 36px; height: 36px; font-size: 16px; }
+  .talks-prev { left: 6px; }
+  .talks-next { right: 6px; }
+  .axolotl-divider img { width: 100px; height: 100px; transform: translateY(-65px); }
+  .schedule-section { padding: 50px 0; }
+  .schedule-pdf { height: 500px; }
+  .organizers-section { padding: 70px 0 85px; }
+  .organizers-head { margin-bottom: 45px; }
+  .organizers-head h2 { font-size: 2rem; }
+  .organizers-grid { grid-template-columns: 1fr; gap: 40px; }
+  .person { width: 100%; max-width: 350px; margin: 0 auto; }
+  .person .avatar { width: 140px; height: 140px; }
+  .sponsors-section { padding: 50px 0 60px; }
+  .sponsors-carousel { margin-bottom: 10px; }
+  .sponsors-slide { flex: 0 0 100%; height: 180px; padding: 15px 20px; }
+  .sponsor:hover img { transform: none; }
+  .sponsors-dots { gap: 7px; margin-bottom: 14px; }
+  .sponsors-dot { width: 8px; height: 8px; }
+  .sponsors-dot.active { width: 20px; }
 }
 
-
-/* =========================================================
-   SMALL MOBILE (max 400px)
-   ========================================================= */
+/* =========================================================*
+  *   SMALL MOBILE (max 400px)*
+  *   ========================================================= */
 
 @media (max-width: 400px) {
+  .nav { padding: 15px 14px; }
+  .event-logos { gap: 10px; }
+  .logo-ciicap { height: 38px; }
+  .logo-qubithub { height: 25px; }
+  .brand { font-size: .95rem; }
+  .event-main { padding-left: 0; padding-right: 0; }
+  .event-title { font-size: 2.5rem; }
+  .event-description { font-size: .9rem; }
+  .axolotl-divider img { width: 85px; height: 85px; transform: translateY(-55px); }
+  .sponsors-slide { height: 160px; padding: 12px 15px; }
+  .sponsors-dots { gap: 6px; }
+  .sponsors-dot { width: 7px; height: 7px; }
+  .sponsors-dot.active { width: 18px; }
+}
 
-  .nav {
-    padding: 15px 14px;
-  }
+/* =========================================================
+  SPONSOR CUSTOM SIZES
+  ========================================================= */
 
-  .event-logos {
-    gap: 10px;
-  }
+@media (min-width: 861px) {
+  .sponsor img[alt="IBM"] { padding: 0 30px; }
+  .sponsor img[alt*="Curiosidad"],
+  .sponsor:hover img[alt*="Curiosidad"] { transform: scale(1.5); }
+}
 
-  .logo-ciicap {
-    height: 38px;
-  }
+@media (min-width: 601px) and (max-width: 860px) {
+  .sponsor img[alt*="Curiosidad"],
+  .sponsor:hover img[alt*="Curiosidad"] { transform: scale(1.2); }
+}
 
-  .logo-qubithub {
-    height: 25px;
-  }
+@media (max-width: 600px) {
+  .sponsor img[alt*="Curiosidad"],
+  .sponsor:hover img[alt*="Curiosidad"] { transform: scale(1.4); }
+}
 
-  .brand {
-    font-size: .95rem;
-  }
-
-  .event-main {
-    padding-left: 0;
-    padding-right: 0;
-  }
-
-  .event-title {
-    font-size: 2.5rem;
-  }
-
-  .event-description {
-    font-size: .9rem;
-  }
-
-  .axolotl-divider img {
-    width: 75px;
-    height: 75px;
-    transform: translateY(-37px);
-  }
-
+@media (max-width: 400px) {
+  .sponsor img[alt*="Curiosidad"],
+  .sponsor:hover img[alt*="Curiosidad"] { transform: scale(1.25); }
 }
