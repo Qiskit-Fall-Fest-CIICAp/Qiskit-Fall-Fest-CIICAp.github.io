@@ -203,7 +203,7 @@ header {
   grid-template-columns: 1.1fr .9fr;
   gap: 50px;
   align-items: center;
-  padding: 50px 0 110px;
+  padding: 50px 0 10px;
 }
 
 .event-content {
@@ -264,7 +264,7 @@ header {
 
 .join-section {
   padding: 10px 0;
-  padding-bottom: 100px;
+  padding-bottom: 50px;
   background: #FFFFFF;
   border-top: 1px solid var(--line);
 }
@@ -295,6 +295,7 @@ header {
 .talks-content {
   min-width: 0;
   text-align: center;
+  padding: 0px 0px 30px;
 }
 
 .talks-carousel {
@@ -337,6 +338,47 @@ header {
 
 .talks-next {
   right: 10px;
+}
+
+/* =========================================================
+   SCHEDULE SECTION
+   ========================================================= */
+
+.schedule-section {
+  padding: 0px 0 100px;
+  background: #FFFFFF;
+  border-top: 1px solid var(--line);
+  text-align: center;
+}
+
+.schedule-section h2 {
+  margin-bottom: 30px;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  line-height: 1.1;
+  color: var(--text);
+}
+
+.schedule-section img {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  border-radius: 6px;
+}
+
+.schedule-pdf {
+  display: block;
+  width: 100%;
+  height: 700px;
+}
+
+@media (max-width: 600px) {
+  .schedule-section {
+    padding: 50px 0;
+  }
+
+  .schedule-pdf {
+    height: 500px;
+  }
 }
 
 
@@ -458,6 +500,121 @@ header {
 }
 
 
+
+/* =========================================================
+   SPONSORS CAROUSEL
+   ========================================================= */
+
+.sponsor-scale {
+    transform: scale(1.3);
+}
+
+.sponsors-carousel {
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+.sponsors-viewport {
+  width: 100%;
+  overflow: hidden;
+}
+
+.sponsors-track {
+  display: flex;
+  width: 100%;
+  transition: transform 0.6s ease-in-out;
+}
+
+.sponsors-slide {
+  flex: 0 0 33.333333%;
+  min-width: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 180px;
+  padding: 15px;
+
+  box-sizing: border-box;
+}
+
+.sponsor {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+}
+
+.sponsor img {
+  max-width: 95%;
+  max-height: 125px;
+
+  width: auto;
+  height: auto;
+
+  object-fit: contain;
+
+  transition: transform 0.3s ease;
+}
+
+.sponsor:hover img {
+  transform: scale(1.08);
+}
+
+/* Pagination */
+
+.sponsors-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.sponsors-dot {
+  width: 10px;
+  height: 10px;
+  padding: 0;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #D5D5D5;
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+.sponsors-dot.active {
+  width: 25px;
+  border-radius: 10px;
+  background: #7AB730;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+  .sponsors-slide {
+    height: 140px;
+    padding: 8px;
+  }
+
+  .sponsor img {
+    max-height: 95px;
+  }
+
+}
+
+
+
+
 /* =========================================================
    TABLET (max 860px)
    ========================================================= */
@@ -566,7 +723,7 @@ header {
   .axolotl-divider img {
     width: 85px;
     height: 85px;
-    transform: translateY(-42px);
+    transform: translateY(-90px);
   }
 
   .organizers-section {
