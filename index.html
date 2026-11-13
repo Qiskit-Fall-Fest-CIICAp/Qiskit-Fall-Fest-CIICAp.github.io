@@ -13,6 +13,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
 </head>
 
 <body>
@@ -71,6 +72,73 @@
       </div>
 
     </section>
+
+
+
+
+
+<section id="sponsors" class="sponsors-section">
+  <div class="wrap">
+
+    <div class="organizers-head">
+      <div>
+        <h2>Sponsors</h2>
+      </div>
+    </div>
+
+    <div class="sponsors-carousel">
+
+      <div class="sponsors-viewport">
+        <div class="sponsors-track">
+
+          <div class="sponsor">
+            <img src="assets/sponsors/1. IBM Quantum.png" alt="IBM Quantum" class="sponsor-scale">
+          </div>
+
+          <div class="sponsor">
+            <img src="assets/sponsors/2. CIICAp.png" alt="CIICAp" class="sponsor-scale">
+          </div>
+
+          <div class="sponsor">
+            <img src="assets/sponsors/3. USRSE.png" alt="USRSE" class="sponsor-scale">
+          </div>
+
+          <div class="sponsor">
+            <img src="assets/sponsors/4. Chicago Women.png" alt="Chicago Women" class="sponsor-scale">
+          </div>
+
+          <div class="sponsor">
+            <img src="assets/sponsors/5. Advanced.svg" alt="Advanced" class="sponsor-scale">
+          </div>
+
+          <div class="sponsor">
+            <img src="assets/sponsors/6. Stealm Academy.png" alt="Stealm Academy" class="sponsor-scale">
+          </div>
+
+          <div class="sponsor">
+            <img src="assets/sponsors/7. TOOLBAR.png" alt="TOOLBAR">
+          </div>
+
+          <div class="sponsor">
+            <img src="assets/sponsors/8. Zeaze.png" alt="Zeaze">
+          </div>
+
+          <div class="sponsor">
+            <img src="assets/sponsors/9. Curiosidad Cuantica.png" alt="Curiosidad Cuántica" class="sponsor-scale">
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <div class="sponsors-dots"></div>
+
+  </div>
+</section>
+
+
+
 
 
 <section id="registro" class="join-section">
@@ -174,6 +242,8 @@
 </section>
 
 
+
+
     <!-- =====================================================
          AXOLOTL DIVIDER
          ===================================================== -->
@@ -254,34 +324,6 @@
 
   </main>
 
-
-  <script>
-    const carousel = document.querySelector(".talks-carousel");
-    const track = carousel.querySelector(".talks-track");
-    const total = track.children.length;
-    let index = 0;
-    let timer;
-
-    function show(i) {
-      index = (i + total) % total;
-      track.style.transform = `translateX(-${index * 100}%)`;
-    }
-
-    function start() {
-      timer = setInterval(() => show(index + 1), 5000);
-    }
-
-    function stop() {
-      clearInterval(timer);
-    }
-
-    carousel.querySelector(".talks-prev").addEventListener("click", () => show(index - 1));
-    carousel.querySelector(".talks-next").addEventListener("click", () => show(index + 1));
-    carousel.addEventListener("mouseenter", stop);
-    carousel.addEventListener("mouseleave", start);
-
-    start();
-  </script>
 
 </body>
 
