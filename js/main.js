@@ -1,3 +1,4 @@
+
 /* =========================================================
    QISKIT FALL FEST 2026 — MAIN JAVASCRIPT
    ========================================================= */
@@ -22,7 +23,7 @@ function initSponsorsCarousel() {
 
   const originalSlides = Array.from(track.children);
   const total = originalSlides.length;
-  const VISIBLE = 3;
+  let VISIBLE = window.innerWidth <= 600 ? 1 : window.innerWidth <= 860 ? 2 : 3;
   const AUTOPLAY_MS = 3000;
 
   if (total <= VISIBLE) return;
@@ -31,14 +32,14 @@ function initSponsorsCarousel() {
   let animating = false;
   let timer;
 
-  const slideWidth = 100 / VISIBLE;
+  const slideWidth = () => 100 / VISIBLE;
 
   function build() {
     track.innerHTML = "";
     dotsContainer.innerHTML = "";
 
     const before = originalSlides.slice(-VISIBLE).map(cloneSlide);
-    const after  = originalSlides.slice(0, VISIBLE).map(cloneSlide);
+    const after = originalSlides.slice(0, VISIBLE).map(cloneSlide);
 
     [...before, ...originalSlides.map(cloneSlide), ...after]
       .forEach(slide => track.appendChild(slide));
@@ -80,7 +81,7 @@ function initSponsorsCarousel() {
   }
 
   function update() {
-    track.style.transform = `translateX(-${index * slideWidth}%)`;
+    track.style.transform = `translateX(-${index * slideWidth()}%)`;
 
     const realIndex = (index - VISIBLE + total) % total;
 
@@ -118,7 +119,9 @@ function initSponsorsCarousel() {
     clearInterval(timer);
   }
 
-  track.addEventListener("transitionend", () => {
+  track.addEventListener("transitionend", e => {
+    if (e.target !== track) return;
+
     if (index >= total + VISIBLE) {
       index = VISIBLE;
       jumpTo(index);
@@ -136,6 +139,18 @@ function initSponsorsCarousel() {
 
   build();
   startAutoplay();
+
+  window.addEventListener("resize", () => {
+    const newVisible = window.innerWidth <= 600 ? 1 : window.innerWidth <= 860 ? 2 : 3;
+
+    if (newVisible !== VISIBLE) {
+      VISIBLE = newVisible;
+      index = VISIBLE;
+      animating = false;
+      build();
+      startAutoplay();
+    }
+  });
 }
 
 
@@ -163,7 +178,7 @@ function initTalksCarousel() {
     track.style.transform = `translateX(-${index * 100}%)`;
   };
 
-  const stop  = () => clearInterval(timer);
+  const stop = () => clearInterval(timer);
   const start = () => {
     stop();
     timer = setInterval(() => show(index + 1), 5000);
